@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use Case Descriptions - Toko Daging</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h1 class="mb-4 text-center text-primary">Fully Developed Use Case Description</h1>
+    
+    <!-- Use Case: Login -->
+     <img src=""
+    <div class="card mb-4">
+      <div class="card-header bg-primary text-white">Use Case: Owner Login ke Dalam Sistem</div>
+      <div class="card-body">
+        <p><strong>Aktor:</strong> Owner</p>
+        <p><strong>Deskripsi:</strong> Owner memasukkan username dan password untuk mengakses sistem pengelolaan toko daging.</p>
+        <p><strong>Alur Normal:</strong></p>
+        <ol>
+          <li>Owner membuka halaman login.</li>
+          <li>Owner mengisi username dan password.</li>
+          <li>Sistem memverifikasi kredensial.</li>
+          <li>Jika berhasil, sistem menampilkan dashboard.</li>
+        </ol>
+        <p><strong>Pre-condition:</strong> Owner memiliki akun aktif.</p>
+        <p><strong>Post-condition:</strong> Owner masuk ke sistem dan dapat mengakses fitur lainnya.</p>
+      </div>
+    </div>
+
+    <!-- Use Case: Transaksi -->
+    <div class="card mb-4">
+      <div class="card-header bg-success text-white">Use Case: Transaksi</div>
+      <div class="card-body">
+        <p><strong>Aktor:</strong> Owner</p>
+        <p><strong>Deskripsi:</strong> Owner melihat daftar transaksi pembelian daging dari pelanggan.</p>
+        <p><strong>Alur Normal:</strong></p>
+        <ol>
+          <li>Owner klik menu "Transaksi".</li>
+          <li>Sistem menampilkan daftar transaksi.</li>
+          <li>Owner dapat melihat status transaksi: Belum Konfirmasi, Konfirmasi, Terkirim, Diterima.</li>
+        </ol>
+        <p><strong>Alur Alternatif (<<extend>>):</strong></p>
+        <ul>
+          <li><strong>Belum Konfirmasi:</strong> Transaksi belum diverifikasi pembayaran.</li>
+          <li><strong>Konfirmasi:</strong> Pembayaran telah dikonfirmasi.</li>
+          <li><strong>Terkirim:</strong> Produk dalam proses pengiriman.</li>
+          <li><strong>Diterima:</strong> Produk telah diterima pelanggan.</li>
+        </ul>
+        <p><strong>Pre-condition:</strong> Owner sudah login ke sistem.</p>
+        <p><strong>Post-condition:</strong> Data transaksi berhasil ditampilkan.</p>
+      </div>
+    </div>
+
+    <!-- Use Case: Product Management -->
+    <div class="card mb-4">
+      <div class="card-header bg-info text-white">Use Case: Kelola Produk</div>
+      <div class="card-body">
+        <p><strong>Aktor:</strong> Owner</p>
+        <p><strong>Deskripsi:</strong> Owner dapat menambah, mengedit, dan menghapus produk daging.</p>
+        <p><strong>Alur Normal:</strong></p>
+        <ol>
+          <li>Owner klik menu Produk.</li>
+          <li>Sistem menampilkan daftar produk.</li>
+          <li>Owner dapat memilih untuk menambah produk baru atau mengedit produk yang ada.</li>
+          <li>Owner menyimpan perubahan.</li>
+        </ol>
+        <p><strong>Relasi:</strong></p>
+        <ul>
+          <li>`<<extend>>` Add New Product</li>
+          <li>`<<include>>` Edit, Delete</li>
+          <li>`<<include>>` Save</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Use Case: Galeri & Kategori -->
+    <div class="card mb-4">
+      <div class="card-header bg-warning text-dark">Use Case: Galeri & Kategori</div>
+      <div class="card-body">
+        <p><strong>Aktor:</strong> Owner</p>
+        <p><strong>Deskripsi:</strong> Owner mengatur galeri gambar dan kategori produk.</p>
+        <p><strong>Fitur Galeri:</strong></p>
+        <ul>
+          <li>Melihat daftar galeri</li>
+          <li>Menambah galeri baru (`<<include>>` Add New Galleries)</li>
+          <li>Mengedit dan menghapus galeri (`<<include>>` Edit, Delete)</li>
+          <li>Simpan (`<<include>>` Save)</li>
+        </ul>
+        <p><strong>Fitur Kategori:</strong></p>
+        <ul>
+          <li>Melihat daftar kategori</li>
+          <li>Menambah kategori baru (`<<include>>` Add New Categories)</li>
+          <li>Mengedit dan menghapus kategori (`<<include>>` Edit, Delete)</li>
+          <li>Simpan (`<<include>>` Save)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

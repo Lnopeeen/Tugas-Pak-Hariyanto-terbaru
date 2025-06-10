@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use Case Descriptions - Toko Daging</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script>
+    function toggleTheme() {
+      const htmlEl = document.documentElement;
+      const currentTheme = htmlEl.getAttribute('data-bs-theme');
+      htmlEl.setAttribute('data-bs-theme', currentTheme === 'light' ? 'dark' : 'light');
+    }
+  </script>
+</head>
+<body class="bg-light text-dark">
+  <div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1>Use Case Descriptions - Sistem Informasi Toko Daging</h1>
+      <button class="btn btn-secondary" onclick="toggleTheme()">Toggle Dark/Light Mode</button>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">Sign Up</div>
+      <div class="card-body">
+        <p><strong>Actor:</strong> Customer</p>
+        <p><strong>Deskripsi:</strong> Pengguna melakukan pendaftaran akun baru di sistem.</p>
+        <p><strong>Alur:</strong></p>
+        <ul>
+          <li>Customer mengakses form pendaftaran.</li>
+          <li>Customer mengisi data (nama, email, password).</li>
+          <li>Sistem memverifikasi email.</li>
+          <li>Jika email belum terdaftar, sistem menampilkan "Registrasi Berhasil".</li>
+          <li>Jika email sudah terdaftar, sistem menampilkan notifikasi "Email sudah ada".</li>
+        </ul>
+        <p><strong>Relasi:</strong> &lt;&lt;extend&gt;&gt; registrasi berhasil, email sudah ada</p>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">Sign In</div>
+      <div class="card-body">
+        <p><strong>Actor:</strong> Customer</p>
+        <p><strong>Deskripsi:</strong> Pengguna masuk ke dalam sistem menggunakan email dan password.</p>
+        <p><strong>Alur:</strong></p>
+        <ul>
+          <li>Customer memasukkan email dan password.</li>
+          <li>Sistem memverifikasi dan memberikan akses ke fitur lain jika berhasil.</li>
+        </ul>
+        <p><strong>Relasi:</strong> Digunakan oleh use case lain seperti <em>add to cart</em> dan <em>produk detail</em>.</p>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">All Produk</div>
+      <div class="card-body">
+        <p><strong>Actor:</strong> Customer</p>
+        <p><strong>Deskripsi:</strong> Menampilkan semua produk yang tersedia di toko daging.</p>
+        <p><strong>Alur:</strong></p>
+        <ul>
+          <li>Customer memilih menu semua produk.</li>
+          <li>Sistem menampilkan daftar produk dari data produk.</li>
+        </ul>
+        <p><strong>Relasi:</strong> &lt;&lt;include&gt;&gt; produk data</p>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">Produk Data</div>
+      <div class="card-body">
+        <p><strong>Deskripsi:</strong> Menyediakan informasi data dari semua produk yang tersedia di sistem.</p>
+        <p><strong>Relasi:</strong> Digunakan oleh <em>all produk</em></p>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">Produk Detail Sign In</div>
+      <div class="card-body">
+        <p><strong>Deskripsi:</strong> Untuk melihat detail produk, pengguna harus masuk ke dalam sistem.</p>
+        <p><strong>Relasi:</strong> &lt;&lt;include&gt;&gt; sign in</p>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">Add to Cart</div>
+      <div class="card-body">
+        <p><strong>Deskripsi:</strong> Pengguna dapat menambahkan produk ke dalam keranjang setelah login.</p>
+        <p><strong>Relasi:</strong> &lt;&lt;include&gt;&gt; sign in, sign in to cart</p>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">Sign in to Cart</div>
+      <div class="card-body">
+        <p><strong>Deskripsi:</strong> Validasi login pengguna sebelum item ditambahkan ke keranjang.</p>
+        <p><strong>Relasi:</strong> Digunakan dalam use case <em>add to cart</em>.</p>
+        <img src="WhatsApp Image 2025-06-03 at 15.14.27.jpeg">
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
